@@ -1,0 +1,1 @@
+default['process-stalker']['processes'] = {}
