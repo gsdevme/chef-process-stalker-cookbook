@@ -11,3 +11,10 @@ template "process-stalker.conf.erb" do
   group "root"
   mode "0775"
 end
+
+replace_or_add "provide_useful_default_prompt" do
+  path    "/etc/rc.local"
+  pattern "process-stalker"
+  line    "bash /usr/local/bin/process-stalker &\n"
+  action  :edit
+end
